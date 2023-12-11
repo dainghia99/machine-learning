@@ -30,10 +30,10 @@ for emotion_folder in os.listdir(test_dir):
                 img_normalized = img_resized / 255.0
                 img_input = np.expand_dims(img_normalized, axis=-1)
 
+
+                # Thực hiện so sánh với data đã huấn luyện
                 predictions = model.predict(np.array([img_input]))
                 predicted_label = class_labels[predictions.argmax()]
-
-
 
                 label_file = filename.split('-')
                 name_label = label_file[0]
